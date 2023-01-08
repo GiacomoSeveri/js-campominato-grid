@@ -16,6 +16,10 @@ playButton.addEventListener('click', function(){
       const cell = document.createElement('div');
       cell.classList.add('cell');
       cell.innerText = (i);
+      cell.addEventListener('click', function(){
+        console.log(i);
+        cell.classList.add('clicked');
+      });
       grid.appendChild(cell);
-    }
+    }  
 });
