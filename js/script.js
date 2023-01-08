@@ -4,55 +4,18 @@
 const grid = document.getElementById('grid');
 const playButton = document.getElementById('play-button');
 
-function play() {
+playButton.addEventListener('click', function(){
+    // cambio il testo al bottone
+    playButton.innerText = 'Ricomincia';
 
-  // # Funzioni interne al gioco
-  const createCell = (number) => {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    cell.append(number);
+    // rimuovo la scritta
+    grid.innerHTML = '';
 
-    return cell;
-  }
-
-  
-
-  // Cambiamo il testo del bottone in "Ricomincia"
-  playButton.innerText = 'Ricomincia';
-
-  // Svuotiamo la griglia
-  grid.innerHTML = '';
-
-  
-
-  // ! -------------------------------
-  // ! SVOLGIMENTO EFFETTIVO
-  // ! -------------------------------
-
-  for (let j = 1; j <= 100; j++) {
-
-    const cell = createCell(j);
-
-    cell.addEventListener('click', function () {
-      cell.classList.add('clicked');
-      // console.log(i);
-    })
-
-  
-
-    grid.appendChild(cell);
-  }
-}
-
-
-
-}
-
-
-
-playButton.addEventListener('click', play);
-
-
-
-
-
+    // ! SCOLGIMENTO
+    for(let i = 1; i <= 100; i++){
+      const cell = document.createElement('div');
+      cell.classList.add('cell');
+      cell.innerText = (i);
+      grid.appendChild(cell);
+    }
+});
